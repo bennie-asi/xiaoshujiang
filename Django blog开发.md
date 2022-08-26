@@ -144,3 +144,4 @@ LOGGING = {
 
 ```
 render函数会根据传入的参数来构造HttpResponse
+用 {% %} 包裹起来的叫做模板标签。
