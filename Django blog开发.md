@@ -19,3 +19,9 @@ DATABASES = {
     }
 }
 ```
+安装驱动程序`pip install PyMySQL`，并在__init__.py文件中添加如下代码
+
+``` python
+import pymysql
+pymysql.install_as_MySQLdb()
+```
