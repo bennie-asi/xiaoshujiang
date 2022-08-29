@@ -143,8 +143,11 @@ LOGGING = {
 }
 
 ```
+## tips
 render函数会根据传入的参数来构造HttpResponse
 用 {% %} 包裹起来的叫做模板标签。
 
 ==为了能在模板中使用 {% static %} 模板标签，别忘了在最顶部 {% load static %} 。static 模板标签位于 static模块中，只有通过 load 模板标签将该模块引入后，才能在模板中使用 {% static %} 标签。 #F44336==
+
+list_display 属性控制 Post 列表页展示的字段
 
