@@ -157,3 +157,4 @@ list_display 属性控制 Post 列表页展示的字段
  
  
  {% url %} 解析视图函数 blog:archive 对应的 URL 模式
+ 
