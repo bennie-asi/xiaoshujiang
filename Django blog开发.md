@@ -151,3 +151,9 @@ render函数会根据传入的参数来构造HttpResponse
 
 list_display 属性控制 Post 列表页展示的字段
 
+## URL调度器
+- 从URL中取值可以使用尖括号<>
+- 捕获的值可以选择性地包含转换器类型。比如，使用 <int:name> 来捕获整型参数。如果不包含转换器，则会匹配除了 / 外的任何字符
+ 
+ 
+ {% url %} 解析视图函数 blog:archive 对应的 URL 模式
