@@ -49,55 +49,6 @@ SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "session"
 ```
 
-## 日志配置
-配置日志，在setting.py文件中添加如下代码
-
-``` python
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,  # 是否禁用以及存在的日志器
-    'formatters': {  # 日志信息显示的格式
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(lineno)d %(message)s'
-        },
-        'simple': {
-            'format': '%(levename)s %(module)s %(lineno)d %(message)s'
-        },
-    },
-    'filters': {  # 对日志进行过滤
-        'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue',
-        },
-
-    },
-    'handlers': {  # 日志处理方法
-        'console': {  # 向终端输出日志
-            'level': 'INFO',
-            'filters': ['require_debug_true'],
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple'
-        },
-        'file': {  # 向文件中输出日志
-            'level': 'INFO',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/blog.log'),
-            'maxBytes': 300 * 1024 * 1024,
-            'backupCount': 10,
-            'formatter': 'verbose'
-        },
-    },
-    'loggers': {
-        # 日志器
-        'django': {
-            # 定义了一个名为Django的日志器
-            'handlers': ['console', 'file'],  # 可以同时向终端和文件中输出日志
-            'propagate': True,  # 是否继续传递日志信息
-            'level': 'INFO',  # 日志器接收的最低日志级别
-        },
-    }
-}
-
-```
 ## 日志记录器的使用
 在settings.py文件中添加如下代码
 ``` python
@@ -158,3 +109,10 @@ list_display 属性控制 Post 列表页展示的字段
  
  {% url %} 解析视图函数 blog:archive 对应的 URL 模式
  
+ 迁移数据库
+ 
+
+``` python
+python manage.py makemigrations
+ python manage.py migrate
+```
