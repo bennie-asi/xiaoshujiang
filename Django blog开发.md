@@ -120,6 +120,58 @@ python manage.py makemigrations
 
 ## Django 返回JSON数据方法
  1. 手动组装字典返回
+  
+
+``` python
+def get_book(request):
+    all_book = Book.objects.all()
+    d = []
+    for i in all_book:
+        d.append({'name': i.name})
+    return JsonResponse(d, safe=False)
+```
+
  2. JsonResponse返回
+   
+
+``` python
+def get_book2(request):
+    from django.forms.models import model_to_dict
+    all_book = Book.objects.all()
+    d = []
+    for i in all_book:
+        d.append(model_to_dict(i))           # <-------针对一个对象()
+    return JsonResponse(d, safe=False) # 非字典要设置成false
+```
+
+``` python
+def booapi(request):
+    from django.core.serializers import serialize
+    book_list = [
+        {'id': 1, 'name': 'ptyhon'},
+        {'id': 2, 'name': 'go'},
+    ]
+    import json
+    return HttpResponse(json.dumps(book_list), content_type='application/json')
+```
+
  3. Django自带的serializers返回
- 4. 
+ 只能针对queryset操作,即本地db里的数据,不能操作从其他系统api获取到的list ,dict等
+ 
+
+``` python
+def get_book3(request):
+    from django.core.serializers import serialize
+    d = serialize('json', Book.objects.all()) # <-------针对一个queryset,[{}, {}]
+
+    # return HttpResponse(d)
+    return HttpResponse(d)
+
+return render(request, 'myapp/index.html', {'foo': 'bar',}, content_type='application/xhtml+xml')
+
+return HttpResponse(t.render(c, request), content_type='application/xhtml+xml')
+
+return HttpResponse(json.dumps(data), content_type='application/json', status=400)
+
+JsonResponse = HttpResponse+content-type
+```
