@@ -116,3 +116,10 @@ list_display 属性控制 Post 列表页展示的字段
 python manage.py makemigrations
  python manage.py migrate
 ```
+
+
+## Django 返回JSON数据方法
+ 1. 手动组装字典返回
+ 2. JsonResponse返回
+ 3. Django自带的serializers返回
+ 4. 
