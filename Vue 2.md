@@ -81,3 +81,27 @@ document.write('url: ' + vm.url);
 ```
 ## 监听属性
 watch
+
+## 组件
+prop ：子组件用来接受父组件传递过来的数据的一个自定义属性。
+父组件的数据需要通过 props 把数据传给子组件，子组件需要显式地用 props 选项声明 "prop"：
+
+``` html
+<div id="app">
+    <child message="hello!"></child>
+</div>
+ 
+<script>
+// 注册
+Vue.component('child', {
+  // 声明 props
+  props: ['message'],
+  // 同样也可以在 vm 实例中像 "this.message" 这样使用
+  template: '<span>{{ message }}</span>'
+})
+// 创建根实例
+new Vue({
+  el: '#app'
+})
+</script>
+```
