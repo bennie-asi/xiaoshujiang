@@ -73,6 +73,7 @@ var Socket = new WebSocket(url, [protocol] );
 | Socket        | 关闭连接         |
 
 ## ES6
+![enter description here](https://www.runoob.com/wp-content/uploads/2018/12/es6-tutorial.jpg)
 ECMAScript 6
 
 > 变量提升：JavaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行的运行，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升（hoisting）
@@ -402,4 +403,102 @@ ws.has(foo);    // false, foo 没有添加成功
  
 ws.delete(window); // 从结合中删除 window 对象
 ws.has(window);    // false, window 对象已经被删除
+```
+### 类class
+ES6 中有 class 语法。值得注意是，这里的 class 不是新的对象继承模型，它只是原型链的语法糖表现形式。
+函数中使用 static 关键词定义构造函数的的方法和属性：
+
+``` javascript
+class Task {
+  constructor() {
+    console.log("task instantiated!");
+  }
+ 
+  showId() {
+    console.log(23);
+  }
+ 
+  static loadAll() {
+    console.log("Loading all tasks..");
+  }
+}
+ 
+console.log(typeof Task); // function
+let task = new Task(); // "task instantiated!"
+task.showId(); // 23
+Task.loadAll(); // "Loading all tasks.."
+```
+类中的继承和超集：
+
+``` javascript
+class Car {
+  constructor() {
+    console.log("Creating a new car");
+  }
+}
+ 
+class Porsche extends Car {
+  constructor() {
+    super();
+    console.log("Creating Porsche");
+  }
+}
+ 
+let c = new Porsche();
+// Creating a new car
+// Creating Porsche
+```
+extends 允许一个子类继承父类，需要注意的是，子类的constructor 函数中需要执行 super() 函数。
+
+当然，你也可以在子类方法中调用父类的方法，如super.parentMethodName()。
+
+### Symbol
+Symbol 是一种新的数据类型，它的值是唯一的，不可变的。ES6 中提出 symbol 的目的是为了生成一个唯一的标识符，不过你访问不到这个标识符：
+
+``` js
+var sym = Symbol( "some optional description" );
+console.log(typeof sym); // symbol
+```
+如果要获取对象 symbol 属性，需要使用Object.getOwnPropertySymbols(o)。
+
+### 迭代器（Iterators）
+迭代器允许每次访问数据集合的一个元素，当指针指向数据集合最后一个元素时，迭代器便会退出。它提供了 next() 函数来遍历一个序列，这个方法返回一个包含 done 和 value 属性的对象。
+
+ES6 中可以通过 Symbol.iterator 给对象设置默认的遍历器，无论什么时候对象需要被遍历，执行它的 @@iterator 方法便可以返回一个用于获取值的迭代器。
+
+``` js
+var arr = [11,12,13];
+var itr = arr[Symbol.iterator]();
+ 
+itr.next(); // { value: 11, done: false }
+itr.next(); // { value: 12, done: false }
+itr.next(); // { value: 13, done: false }
+ 
+itr.next(); // { value: undefined, done: true }
+```
+可以通过 `[Symbol.iterator]()` 自定义一个对象的迭代器。
+### Generators
+Generator 函数是 ES6 的新特性，它允许一个函数返回的可遍历对象生成多个值。
+在使用中你会看到 * 语法和一个新的关键词 yield:
+
+``` js
+function *infiniteNumbers() {
+  var n = 1;
+  while (true){
+    yield n++;
+  }
+}
+ 
+var numbers = infiniteNumbers(); // returns an iterable object
+ 
+numbers.next(); // { value: 1, done: false }
+numbers.next(); // { value: 2, done: false }
+numbers.next(); // { value: 3, done: false }
+```
+每次执行 yield 时，返回的值变为迭代器的下一个值。
+### Promises
+ES6 对 Promise 有了原生的支持，一个 Promise 是一个等待被异步执行的对象，当它执行完成后，其状态会变成 resolved 或者rejected。
+
+``` js
+
 ```
