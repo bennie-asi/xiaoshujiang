@@ -175,3 +175,22 @@ return HttpResponse(json.dumps(data), content_type='application/json', status=40
 
 JsonResponse = HttpResponse+content-type
 ```
+
+多条件多字段过滤筛选数据
+
+``` python
+conditions ={
+    'server_ip': ip,
+    "bk_biz_id": bk_biz_id,
+    'cron_min': c["cron_min"],
+    'cron_hour': c["cron_hour"],
+    'cron_day': c["cron_day"],
+    'cron_month': c["cron_month"],
+    'cron_week': c["cron_week"],
+    'cron_task': c["cron_task"],
+    "creator": c["user"],
+    "deleted": 0
+}
+query_set = CrontabInfo.objects.filter(**conditions)
+```
+
