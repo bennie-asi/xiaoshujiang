@@ -307,3 +307,32 @@ axios.interceptors.request.eject(myInterceptor);
 var instance = axios.create();
 instance.interceptors.request.use(function () {/*...*/});
 ```
+错误处理
+
+``` js
+axios.get('/user/12345')
+  .catch(function (error) {
+    if (error.response) {
+      // 请求已发出，但服务器响应的状态码不在 2xx 范围内
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers);
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      console.log('Error', error.message);
+    }
+    console.log(error.config);
+  });
+```
+可以使用 validateStatus 配置选项定义一个自定义 HTTP 状态码的错误范围。
+
+``` js
+axios.get('/user/12345', {
+  validateStatus: function (status) {
+    return status < 500; // 状态码在大于或等于500时才会 reject
+  }
+})
+```
+
+## Vue.js Ajax(vue-resource)
+用于异步加载
