@@ -80,3 +80,4 @@ document.write('<br>');
 document.write('url: ' + vm.url);
 ```
 ## 监听属性
+watch
