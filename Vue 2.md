@@ -36,3 +36,12 @@ v-on 缩写
 <!-- 缩写 -->
 <a @click="doSomething"></a>
 ```
+
+## 条件语句
+ 1. v-if
+ 2. v-else
+ 3. v-else-if
+ 4. v-show
+ tips：**v-if与v-show的区别**，v-if是直接操作DOM元素来控制元素的展示，v-show通过控制元素属性display来控制元素是否显示
+ 
+ 
