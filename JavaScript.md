@@ -31,3 +31,5 @@ Promise的all方法提供了并行执行异步操作的能力，并且在所有�
 
 ### then
 用于链式调用
+
+## callback
