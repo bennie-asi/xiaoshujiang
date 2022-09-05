@@ -1,6 +1,6 @@
 ---
-title: JavaScript
-tags: Django,Python,日志
+title: JavaScrip
+tags: JavaScript,ES6,日志
 category: /小书匠/日记/2022-09
 renderNumberedHeading: true
 grammar_cjkRuby: true
@@ -72,4 +72,123 @@ var Socket = new WebSocket(url, [protocol] );
 | Socket.send() | 使用连接发送数据 |
 | Socket        | 关闭连接         |
 
+## ES6
+ECMAScript 6
+
 > 变量提升：JavaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行的运行，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升（hoisting）
+
+###  let、const 和 block 作用域
+let 允许创建块级作用域，ES6 推荐在函数中使用 let 定义变量，而非 var：
+
+``` javascript
+var a = 2;
+{
+  let a = 3;
+  console.log(a); // 3
+}
+console.log(a); // 2
+```
+
+同样在块级作用域有效的另一个变量声明方式是 const，它可以声明一个常量。ES6 中，const 声明的常量类似于指针，它指向某个引用，也就是说这个「常量」并非一成不变的，如：
+
+``` javascript
+{
+  const ARR = [5,6];
+  ARR.push(7);
+  console.log(ARR); // [5,6,7]
+  ARR = 10; // TypeError
+}
+```
+ - let 关键词声明的变量不具备变量提升（hoisting）特性
+ - let 和 const 声明只在最靠近的一个块中（花括号内）有效
+ - 当使用常量 const 声明时，请使用大写变量，如：CAPITAL_CASING
+ - const 在声明时必须被赋值
+
+### 箭头函数（Arrow Functions）
+ES6 中，箭头函数就是函数的一种简写形式，使用括号包裹参数，跟随一个 =>，紧接着是函数体：
+
+``` javascript
+var getPrice = function() {
+  return 4.55;
+};
+ 
+// Implementation with Arrow Function
+var getPrice = () => 4.55;
+```
+
+需要注意的是，上面例子中的 getPrice 箭头函数采用了简洁函数体，它不需要 return 语句，下面这个例子使用的是正常函数体：
+
+``` javascript
+let arr = ['apple', 'banana', 'orange'];
+ 
+let breakfast = arr.map(fruit => {
+  return fruit + 's';
+});
+ 
+console.log(breakfast); // apples bananas oranges
+```
+箭头函数不仅仅是让代码变得简洁，函数中 this 总是绑定总是指向对象自身。具体可以看看下面几个例子：
+
+``` javascript
+function Person() {
+  this.age = 0;
+ 
+  setInterval(function growUp() {
+    // 在非严格模式下，growUp() 函数的 this 指向 window 对象
+    this.age++;
+  }, 1000);
+}
+var person = new Person();
+```
+我们经常需要使用一个变量来保存 this，然后在 growUp 函数中引用：
+
+``` javascript
+function Person() {
+  var self = this;
+  self.age = 0;
+ 
+  setInterval(function growUp() {
+    self.age++;
+  }, 1000);
+}
+```
+使用箭头函数可以省却这个麻烦
+
+``` javascript
+function Person(){
+  this.age = 0;
+ 
+  setInterval(() => {
+    // |this| 指向 person 对象
+    this.age++;
+  }, 1000);
+}
+ 
+var person = new Person();
+```
+### 函数参数默认值
+ES6 中允许你对函数参数设置默认值：
+
+``` javascript
+let getFinalPrice = (price, tax=0.7) => price + price * tax;
+getFinalPrice(500); // 850
+```
+### Spread / Rest 操作符
+Spread / Rest 操作符指的是 ...，具体是 Spread 还是 Rest 需要看上下文语境。
+当被用于迭代器中时，它是一个 Spread 操作符：
+
+``` javascript
+function foo(x,y,z) {
+  console.log(x,y,z);
+}
+let arr = [1,2,3];
+foo(...arr); // 1 2 3
+```
+当被用于函数传参时，是一个 Rest 操作符：
+
+``` javascript
+function foo(...args) {
+  console.log(args);
+}
+foo( 1, 2, 3, 4, 5); // [1, 2, 3, 4, 5]
+```
