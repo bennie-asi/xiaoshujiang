@@ -44,4 +44,39 @@ v-on 缩写
  4. v-show
  tips：**v-if与v-show的区别**，v-if是直接操作DOM元素来控制元素的展示，v-show通过控制元素属性display来控制元素是否显示
  
+ ## 计算属性
+ computed
+ **computed与methods的区别**：computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行。
  
+ computed 属性默认只有 getter ，不过在需要时你也可以提供一个 setter ：
+ 
+
+``` js
+var vm = new Vue({
+  el: '#app',
+  data: {
+    name: 'Google',
+    url: 'http://www.google.com'
+  },
+  computed: {
+    site: {
+      // getter
+      get: function () {
+        return this.name + ' ' + this.url
+      },
+      // setter
+      set: function (newValue) {
+        var names = newValue.split(' ')
+        this.name = names[0]
+        this.url = names[names.length - 1]
+      }
+    }
+  }
+})
+// 调用 setter， vm.name 和 vm.url 也会被对应更新
+vm.site = '菜鸟教程 http://www.runoob.com';
+document.write('name: ' + vm.name);
+document.write('<br>');
+document.write('url: ' + vm.url);
+```
+## 监听属性
