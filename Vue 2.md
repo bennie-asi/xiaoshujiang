@@ -369,3 +369,4 @@ axios.get('/user/12345', {
 
 ## Vue.js Ajax(vue-resource)
 用于异步加载
+
