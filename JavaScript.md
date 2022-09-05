@@ -175,7 +175,7 @@ getFinalPrice(500); // 850
 ```
 ### Spread / Rest 操作符
 Spread / Rest 操作符指的是 ...，具体是 Spread 还是 Rest 需要看上下文语境。
-当被用于迭代器中时，它是一个 Spread 操作符：
+当被用于迭代器中时，它是一个 Spread 操作符(参数为数组)：
 
 ``` javascript
 function foo(x,y,z) {
@@ -184,7 +184,7 @@ function foo(x,y,z) {
 let arr = [1,2,3];
 foo(...arr); // 1 2 3
 ```
-当被用于函数传参时，是一个 Rest 操作符：
+当被用于函数传参时，是一个 Rest 操作符（参数转化为数组）：
 
 ``` javascript
 function foo(...args) {
@@ -192,3 +192,176 @@ function foo(...args) {
 }
 foo( 1, 2, 3, 4, 5); // [1, 2, 3, 4, 5]
 ```
+### 对象此法扩展
+ES6 允许声明在对象字面量时使用简写语法，来初始化属性变量和函数的定义方法，并且允许在对象属性中进行计算操作：
+
+``` javascript
+function getCar(make, model, value) {
+  return {
+    // 简写变量
+    make,  // 等同于 make: make
+    model, // 等同于 model: model
+    value, // 等同于 value: value
+ 
+    // 属性可以使用表达式计算值
+    ['make' + make]: true,
+ 
+    // 忽略 `function` 关键词简写对象函数
+    depreciate() {
+      this.value -= 2500;
+    }
+  };
+}
+ 
+let car = getCar('Barret', 'Lee', 40000);
+ 
+// output: {
+//     make: 'Barret',
+//     model:'Lee',
+//     value: 40000,
+//     makeBarret: true,
+//     depreciate: [Function: depreciate]
+// }
+```
+### 二进制和八进制字面量
+ES6 支持二进制和八进制的字面量，通过在数字前面添加 0o 或者0O 即可将其转换为八进制值：
+
+``` javascript
+let oValue = 0o10;
+console.log(oValue); // 8
+ 
+let bValue = 0b10; // 二进制使用 `0b` 或者 `0B`
+console.log(bValue); // 2
+```
+###  对象和数组解构
+解构可以避免在对象赋值时产生中间变量
+
+``` javascript
+function foo() {
+  return [1,2,3];
+}
+let arr = foo(); // [1,2,3]
+ 
+let [a, b, c] = foo();
+console.log(a, b, c); // 1 2 3
+ 
+function bar() {
+  return {
+    x: 4,
+    y: 5,
+    z: 6
+  };
+}
+let {x: x, y: y, z: z} = bar();
+console.log(x, y, z); // 4 5 6
+```
+### 对象超类
+ES6 允许在对象中使用 super 方法
+
+``` javascript
+var parent = {
+  foo() {
+    console.log("Hello from the Parent");
+  }
+}
+ 
+var child = {
+  foo() {
+    super.foo();
+    console.log("Hello from the Child");
+  }
+}
+ 
+Object.setPrototypeOf(child, parent);
+child.foo(); // Hello from the Parent
+             // Hello from the Child
+```
+### 模板语法和分隔符
+ - ${ ... } 用来渲染一个变量】
+ - ` 作为分隔符
+
+``` javascript
+let user = 'Barret';
+console.log(`Hi ${user}!`); // Hi Barret!
+```
+###  for...of VS for...in
+for...of 用于遍历一个迭代器，如数组：
+
+``` js
+let nicknames = ['di', 'boo', 'punkeye'];
+nicknames.size = 3;
+for (let nickname of nicknames) {
+  console.log(nickname);
+}
+// 结果: di, boo, punkeye
+```
+for...in 用来遍历对象中的属性：
+
+``` js
+let nicknames = ['di', 'boo', 'punkeye'];
+nicknames.size = 3;
+for (let nickname in nicknames) {
+  console.log(nickname);
+}
+Result: 0, 1, 2, size
+```
+### Map 和 WeakMap
+ES6 中两种新的数据结构集：Map 和 WeakMap。事实上每个对象都可以看作是一个 Map。
+一个对象由多个 key-val 对构成，在 Map 中，任何类型都可以作为对象的 key，如：
+
+``` js
+var myMap = new Map();
+ 
+var keyString = "a string",
+    keyObj = {},
+    keyFunc = function () {};
+ 
+// 设置值
+myMap.set(keyString, "value 与 'a string' 关联");
+myMap.set(keyObj, "value 与 keyObj 关联");
+myMap.set(keyFunc, "value 与 keyFunc 关联");
+ 
+myMap.size; // 3
+ 
+// 获取值
+myMap.get(keyString);    // "value 与 'a string' 关联"
+myMap.get(keyObj);       // "value 与 keyObj 关联"
+myMap.get(keyFunc);      // "value 与 keyFunc 关联"
+```
+
+> **弱引用**
+> 在计算机程序中，弱引用与强引用相对，是指不能确保其引用的对象不会被垃圾回收器回收的引用。一个对象若只被弱引用所引用，则被认为是不可访问的（或弱访问的），并因此可能在任何时刻被回收
+
+WeakMap 就是一个 Map，只不过它的所有 key 都是弱引用，意思就是 WeakMap 中的东西垃圾回收时不考虑，使用它不用担心内存泄漏问题。
+另一个需要注意的点是，WeakMap 的所有 key 必须是对象。它只有四个方法 delete(key),has(key),get(key) 和set(key, val)：
+
+``` js
+let w = new WeakMap();
+w.set('a', 'b'); 
+// Uncaught TypeError: Invalid value used as weak map key
+ 
+var o1 = {},
+    o2 = function(){},
+    o3 = window;
+ 
+w.set(o1, 37);
+w.set(o2, "azerty");
+w.set(o3, undefined);
+ 
+w.get(o3); // undefined, because that is the set value
+ 
+w.has(o1); // true
+w.delete(o1);
+w.has(o1); // false
+```
+### Set和WeakSet
+Set 对象是一组不重复的值，重复的值将被忽略，类似于python中的集合set，值类型可以是原始类型和引用类型：
+
+``` js
+let mySet = new Set([1, 1, 2, 2, 3, 3]);
+mySet.size; // 3
+mySet.has(1); // true
+mySet.add('strings');
+mySet.add({ a: 1, b:2 });
+```
+可以通过 forEach 和 for...of 来遍历 Set 对象：
