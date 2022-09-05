@@ -16,7 +16,7 @@ v-bind：HTML属性值使用v-bind指令
 
 修饰符：修饰符是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。
 
-v-model：用来在 input、select、textarea、checkbox、radio 等表单控件元素上创建双向数据绑定，根据表单上的值，自动更新绑定的元素的值。
+v-model：用来在 input、select、textarea、checkbox、radio 等表单控件元素上创建双向数据绑定，根据表单上的值，自动更新绑定的元素的值。(调用的是set和get函数)
 
 过滤器：Vue.js 允许你自定义过滤器，被用作一些常见的文本格式化。由"管道符"指示
 
@@ -49,8 +49,6 @@ v-on 缩写
  **computed与methods的区别**：computed 是基于它的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，函数总会重新调用执行。
  
  computed 属性默认只有 getter ，不过在需要时你也可以提供一个 setter ：
- 
-
 ``` js
 var vm = new Vue({
   el: '#app',
@@ -81,6 +79,41 @@ document.write('url: ' + vm.url);
 ```
 ## 监听属性
 watch
+watch在监听的时候，可以有两次参数，第一次参数为更新的额数据，第二个参数为之前的旧数据
+``` html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+<div id = "app">
+    <p style = "font-size:25px;">计数器: {{ counter }}</p>
+    <button @click = "counter++" style = "font-size:25px;">点我</button>
+</div>
+<script type = "text/javascript">
+var vm = new Vue({
+    el: '#app',
+    data: {
+        counter: 1
+    }
+});
+vm.$watch('counter', function(nval, oval) {
+    alert('计数器值的变化 :' + oval + ' 变为 ' + nval + '!');
+});
+setTimeout(
+    function(){
+        vm.counter += 20;
+    },10000
+);
+</script>
+</body>
+</html>
+```
+Tips:如果监听的数据为一个对象（类似于引用/指针）的时候，需要开启深度监控`deep:true`
+，因为在我们没有开启深度监控的时候，watch只会监听第一层，而对象的数据修改了，但对象它的首地址没有修改，所以watch判定它没有发生数据的变化，从而监听不到
 
 ## 组件
 prop ：子组件用来接受父组件传递过来的数据的一个自定义属性。
