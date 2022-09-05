@@ -517,3 +517,4 @@ p.then((val) => console.log("Promise Resolved", val),
        (err) => console.log("Promise Rejected", err));
 ```
 
+## async
