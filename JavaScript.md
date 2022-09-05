@@ -365,3 +365,41 @@ mySet.add('strings');
 mySet.add({ a: 1, b:2 });
 ```
 可以通过 forEach 和 for...of 来遍历 Set 对象：
+
+``` js
+mySet.forEach((item) => {
+  console.log(item);
+    // 1
+    // 2
+    // 3
+    // 'strings'
+    // Object { a: 1, b: 2 }
+});
+ 
+for (let value of mySet) {
+  console.log(value);
+    // 1
+    // 2
+    // 3
+    // 'strings'
+    // Object { a: 1, b: 2 }
+}
+```
+Set 同样有 delete() 和 clear() 方法。
+### WeakSet
+类似于 WeakMap，WeakSet 对象可以让你在一个集合中保存对象的弱引用，在 WeakSet 中的对象只允许出现一次：
+
+``` js
+var ws = new WeakSet();
+var obj = {};
+var foo = {};
+ 
+ws.add(window);
+ws.add(obj);
+ 
+ws.has(window); // true
+ws.has(foo);    // false, foo 没有添加成功
+ 
+ws.delete(window); // 从结合中删除 window 对象
+ws.has(window);    // false, window 对象已经被删除
+```
