@@ -125,3 +125,25 @@ def dic2objDecimals(o, fs, d):
     """
 ```
 
+``` python
+def dic2objInts(o, fs, d):
+    """
+    :param o: 某一个对象，一般为模型对象，如已经初始化之后的user
+    :param fs: 字段列表，如：['id', 'name', 'sex', 'date']
+    :param d: 参数字典
+    :return: 作用：把字典d中的键fs放到对象o的属性fs，即o.fs = d['fs']；但注意d['fs']被转换为了int数。
+                若d['fs']为空，则o的属性fs设置为0；
+    """
+```
+
+``` python
+def dic2objFloats(o, fs, d):
+    """
+        :param o: 某一个对象，一般为模型对象，如已经初始化之后的user
+        :param fs: 字段列表，如：['id', 'name', 'sex', 'date']
+        :param d: 参数字典
+        :return: 作用：把字典d中的键fs放到对象o的属性fs，即o.fs = d['fs']；但注意d['fs']被转换为了float数。
+                    若d['fs']为空，则o的属性fs设置为0；
+        """
+```
+
