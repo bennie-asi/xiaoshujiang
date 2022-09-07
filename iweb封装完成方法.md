@@ -88,3 +88,40 @@ def obj2dic(o, ks, d=None):
     """
 ```
 
+``` python 
+def dic2obj(o, ks, d):
+    """
+    :param o: 某一个对象，一般为模型对象，如已经初始化之后的user
+    :param ks: 字段列表，如：['id', 'name', 'sex', 'date']
+    :param d: 参数字典
+    :return: 作用：把字典d中的键ks放到对象o的属性ks，即o.ks = d['ks']；得到一个对象o；
+                dic2obj(user, ['id', 'name', 'sex', 'date'], param)====>user['id'] = param.id；
+                一般用在数据库更新上。
+    """
+```
+
+``` python
+def dic2objRefs(o, fs, d):
+```
+
+``` python
+def obj2obj(dst, ks, src):
+    """
+    :param dst: 目标对象
+    :param ks: 字段列表，如：['id', 'name', 'sex', 'date']
+    :param src: 源对象
+    :return: 作用：对象src中的属性列表ks赋值给dst的属性列表ks，即dst.ks = src.ks。
+    """
+```
+
+``` python
+def dic2objDecimals(o, fs, d):
+    """
+    :param o: 某一个对象，一般为模型对象，如已经初始化之后的user
+    :param fs: 字段列表，如：['id', 'name', 'sex', 'date']
+    :param d: 参数字典
+    :return: 作用：把字典d中的键fs放到对象o的属性fs，即o.fs = d['fs']；但注意d['fs']被转换为了decimal数。
+                若d['fs']为空，则o的属性fs设置为0；
+    """
+```
+
