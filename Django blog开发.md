@@ -194,9 +194,10 @@ conditions ={
 query_set = CrontabInfo.objects.filter(**conditions)
 ```
 
-@classmethod 多态，使得继承体系中的多个类都能以各自所独有的方式来实现某个方法。
-通过@classmethod，可以用一种与构造器类似的方式来构造类的对象。
+> @classmethod 多态，使得继承体系中的多个类都能以各自所独有的方式来实现某个方法。
+> 通过@classmethod，可以用一种与构造器类似的方式来构造类的对象。
 
-@property 我们可以使用@property装饰器来创建只读属性，@property装饰器会将方法转换为相同名称的只读属性,可以与所定义的属性配合使用，这样可以防止属性被修改。
+> @property 我们可以使用@property装饰器来创建只读属性，@property装饰器会将方法转换为相同名称的只读属性,可以与所定义的属性配合使用，这样可以防止属性被修改。
+
 
 
