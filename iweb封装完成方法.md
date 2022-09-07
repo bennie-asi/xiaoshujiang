@@ -158,3 +158,11 @@ def dic2objNums(o, fs, d):
         """
 ```
 
+``` python
+def dic2objDateTimes(o, fs, d):
+```
+
+``` python
+def dic2objTimes(o, fs, d):
+```
+
