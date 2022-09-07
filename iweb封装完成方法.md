@@ -166,3 +166,7 @@ def dic2objDateTimes(o, fs, d):
 def dic2objTimes(o, fs, d):
 ```
 
+``` python
+def dic2dic(dst, ks, src):
+```
+
