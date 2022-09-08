@@ -588,3 +588,7 @@ def money_to_sound_text(money):
 def imap(func, *iterables):
 ```
 
+``` python
+def get_obj_foreignkey_text(obj, field, timeout):
+    '''获取对象外键文本描述'''
+```
