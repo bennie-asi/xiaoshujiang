@@ -231,3 +231,8 @@ def parsedate(s):
     """格式化时间列表，如：parsedate('19960508')====>1996-05-08"""
 ```
 
+``` python 
+def isphone(phone):
+    '''是否是手机格式'''
+```
+
