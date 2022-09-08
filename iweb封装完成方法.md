@@ -280,3 +280,7 @@ def get_model_obj_cache_key(model, objid):
 def get_obj_cache_key_with_fields(fields):
 ```
 
+``` python
+def get_cached_obj(model, objid, timeout=60 * 60 * 24):
+```
+
