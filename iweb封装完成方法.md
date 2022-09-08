@@ -364,5 +364,8 @@ def get_models_text(modelname, ids, attr='name', split=','):
     '''获取模型文本'''
 ```
 
-
+``` python
+def get_or_set_file(filekey, content, subpath=None, force=False, partition=False, timeout=60 * 60, root=None):
+    '''将文件保存到上传临时目录'''
+```
 
