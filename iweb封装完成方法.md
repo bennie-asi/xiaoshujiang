@@ -636,3 +636,7 @@ def create_datetime(date, time):
 def gen_value_changer(expression):
 ```
 
+``` python
+def calc_value_by_change_exp(exp, raw, ndigits=None):
+```
+
