@@ -601,3 +601,12 @@ def get_local_value(name, default=None):
 def set_local_value(name, value):
 ```
 
+``` python
+def _trans_name(s, lang='en', langsdic=None):
+```
+
+``` python
+def trans_name(s, lang=None, langsdic=None):
+    '''中文/英文/泰文'''
+```
+
