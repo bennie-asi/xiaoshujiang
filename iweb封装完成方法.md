@@ -276,3 +276,7 @@ def get_model_obj_cache_key(model, objid):
     '''获取对象缓存的键名子'''
 ```
 
+``` python
+def get_obj_cache_key_with_fields(fields):
+```
+
