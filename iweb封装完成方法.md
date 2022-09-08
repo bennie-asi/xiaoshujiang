@@ -292,3 +292,7 @@ def get_cached_obj_with_fields(model, fields, timeout=60 * 60 * 24):
 def del_cached_obj(obj):
 ```
 
+``` python
+def del_obj_all_cache(obj):
+    '''删除该对象关联的全部缓存'''
+```
