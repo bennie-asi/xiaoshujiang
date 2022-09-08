@@ -619,5 +619,9 @@ def trans_dict(d, fields, lang=None, trans=None):
 def trans_dict_list(items, *args):
 ```
 
+``` python
+def trans_dict_list_name(items, *args):
+```
+
 
 
