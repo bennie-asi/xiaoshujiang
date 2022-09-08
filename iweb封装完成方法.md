@@ -404,4 +404,10 @@ def get_cached_file(fileurl, force=False, subpath='', partition=False, wrap=None
     """获取缓存文件，需至少传入文件路径"""
 ```
 
+``` python
+def set_upload_file(content, suffix=''):
+    """设置上传路径"""
+```
+
+
 
