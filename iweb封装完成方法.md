@@ -374,5 +374,10 @@ def register_models(models):
     """如果模型被设置为abstract，则不注册，反之则注册"""
 ```
 
+``` python
+def mergedic(rawd, *othd):
+    """多个字典合并，就地合并，即合并之后的结果放入rawd中"""
+```
+
 
 
