@@ -436,4 +436,16 @@ def list2trees(lst):
     """
 ```
 
+``` python
+def treechildren(tre, d):
+    """
+    :param tre: 具有树特征的数据
+    :param d: 一般为空字典
+    :return: 返回一棵树。例如：
+    d={}；
+    for tr in treedata:  #treedata为具有树结构的数据
+        treechildren(tr, d)
+    print(d)        #  {1: [1], 2: [1, 2], 3: [1, 2, 3], 4: [4], 5: [5]}
+    """
+```
 
