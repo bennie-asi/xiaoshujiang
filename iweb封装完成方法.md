@@ -623,5 +623,8 @@ def trans_dict_list(items, *args):
 def trans_dict_list_name(items, *args):
 ```
 
-
+``` python
+def T(text):
+    '''自动翻译'''
+```
 
