@@ -518,5 +518,8 @@ def extend_x_args(*args, unique=None):
     """
 ```
 
-
+``` python
+def unique_map_list(sequence, key):
+    """根据键key过滤序列sequence中重复的项"""
+```
 
