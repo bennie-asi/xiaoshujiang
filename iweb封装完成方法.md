@@ -184,3 +184,11 @@ def get_one_by_sql(sql, params=None, db=None):
     """
 ```
 
+``` python
+def objstrip(obj):
+    """
+    :param obj: 传入一个字典，元组或列表，或一个值.
+    :return: 返回原对象。原来是什么就返回什么。作用：删除值为空的键
+    """
+```
+
