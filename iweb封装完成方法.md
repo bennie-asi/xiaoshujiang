@@ -632,5 +632,7 @@ def T(text):
 def create_datetime(date, time):
 ```
 
-
+``` python
+def gen_value_changer(expression):
+```
 
