@@ -409,5 +409,8 @@ def set_upload_file(content, suffix=''):
     """设置上传路径"""
 ```
 
-
+``` python
+def gettranslang():
+    """获取语言"""
+```
 
