@@ -359,5 +359,8 @@ def month_last_day(y, m):
 def last_month_first_day(today=None):
 ```
 
-
+``` python
+def get_models_text(modelname, ids, attr='name', split=','):
+    '''获取模型文本'''
+```
 
