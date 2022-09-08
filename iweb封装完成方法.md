@@ -296,3 +296,4 @@ def del_cached_obj(obj):
 def del_obj_all_cache(obj):
     '''删除该对象关联的全部缓存'''
 ```
+
