@@ -202,3 +202,18 @@ def splitstrip(strs, seg=' '):
     """
 ```
 
+``` python
+def orderinggen():
+    """
+    :return: 返回当前时间戳
+    """
+```
+
+``` python
+def md5(s):
+    """
+    :param s: 待加密字符串
+    :return: 返回已加密后的字符串
+    """
+```
+
