@@ -343,5 +343,7 @@ def get_barcode_url(text):
 def wrap_url(path):
 ```
 
-
+``` python
+def get_urlqrcode_url(path, logo=None):
+```
 
