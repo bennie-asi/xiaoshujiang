@@ -331,9 +331,11 @@ def parse_datetime(s):
 
 ``` python
 def get_qrcode_url(text, logourl=None, corner='lt-rb'):
+# 二维码生成
 ```
 
 ``` python
 def get_barcode_url(text):
+# 条形码生成
 ```
 
