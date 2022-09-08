@@ -419,3 +419,5 @@ def wrap_mongo_query(query, param={}, trans=None):
     """类似于上边的wrap_query();只不过这儿是非关系型数据库mongoDB"""
 ```
 
+
+
