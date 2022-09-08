@@ -473,5 +473,7 @@ def base64_encode(data):
 def base64_encode_string(s):
 ```
 
-
+``` python
+def base64_decode_string(s):
+```
 
