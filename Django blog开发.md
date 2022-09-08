@@ -1,5 +1,5 @@
 ---
-title: Django blog开发
+title: Django
 tags: Django,Python,日志
 category: /小书匠/日记/2022-08
 renderNumberedHeading: true
@@ -202,8 +202,5 @@ query_set = CrontabInfo.objects.filter(**conditions)
 > @property其实就是实现了getter功能； @xxx.setter实现的是setter功能；还有一个 @xxx.deleter实现删除功能
 定义方法的时候 @property必须在 @xxx.setter之前，且二者修饰的方法名相同（age()）
 如果只实现了 @property（而没有实现@xxx.setter），那么该属性为 只读属性
-
-
-
 
 
