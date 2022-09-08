@@ -579,3 +579,8 @@ def money_to_chinese(money):
     """转换数字为大写货币格式"""
 ```
 
+``` python
+def money_to_sound_text(money):
+    '''转换为语音友好的文本'''
+```
+
