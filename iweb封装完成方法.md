@@ -394,6 +394,9 @@ def get_global_session(key):
     """获取全局session"""
 ```
 
-
+``` python
+def del_global_session(key):
+    """删除全局session"""
+```
 
 
