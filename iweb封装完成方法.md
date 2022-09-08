@@ -527,5 +527,7 @@ def unique_map_list(sequence, key):
 def clear_emoji(s):
 ```
 
-
+``` python
+def clear_dic_emoji(dic: dict, keys) -> dict:
+```
 
