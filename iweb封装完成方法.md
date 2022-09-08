@@ -309,3 +309,7 @@ def set_table_cache(key, newval, timeout=30):
 def del_table_cache(key):
 ```
 
+``` python
+def get_safe_cache(key, default=None):
+```
+
