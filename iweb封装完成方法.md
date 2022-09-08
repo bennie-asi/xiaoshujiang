@@ -497,5 +497,14 @@ def _parseToMultiDict(k, v, rd):
     """
 ```
 
+``` python
+def _wrapArrayDict(d):
+    """
+    :param d: 字典d
+    :return: 检测字典的键的字符串是否全部由数字组成，如果是，则把值转换为列表并返回；
+                只要有任何一个键的字符串不是全部由数字组成，则返回原字典；
+    """
+```
+
 
 
