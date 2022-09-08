@@ -217,3 +217,8 @@ def md5(s):
     """
 ```
 
+``` python
+def pwdhash(pwd, salt):
+    '''计算加密后的密码,禁止修该函数!!!'''
+```
+
