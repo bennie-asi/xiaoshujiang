@@ -222,3 +222,7 @@ def pwdhash(pwd, salt):
     '''计算加密后的密码,禁止修该函数!!!'''
 ```
 
+``` python
+def get_querykey(query):
+```
+
