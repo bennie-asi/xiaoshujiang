@@ -226,3 +226,8 @@ def pwdhash(pwd, salt):
 def get_querykey(query):
 ```
 
+``` python
+def parsedate(s):
+    """格式化时间列表，如：parsedate('19960508')====>1996-05-08"""
+```
+
