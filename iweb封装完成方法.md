@@ -333,3 +333,6 @@ def parse_datetime(s):
 def get_qrcode_url(text, logourl=None, corner='lt-rb'):
 ```
 
+``` python
+def get_barcode_url(text):
+```
