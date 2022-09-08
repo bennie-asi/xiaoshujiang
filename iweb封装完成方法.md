@@ -355,5 +355,7 @@ def month_first_day(y, m):
 def month_last_day(y, m):
 ```
 
-
+``` python
+def last_month_first_day(today=None):
+```
 
