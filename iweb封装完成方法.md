@@ -592,3 +592,8 @@ def imap(func, *iterables):
 def get_obj_foreignkey_text(obj, field, timeout):
     '''获取对象外键文本描述'''
 ```
+
+``` python
+def get_local_value(name, default=None):
+```
+
