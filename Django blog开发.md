@@ -198,6 +198,12 @@ query_set = CrontabInfo.objects.filter(**conditions)
 > 通过@classmethod，可以用一种与构造器类似的方式来构造类的对象。
 
 > @property 我们可以使用@property装饰器来创建只读属性，@property装饰器会将方法转换为相同名称的只读属性,可以与所定义的属性配合使用，这样可以防止属性被修改。
+> 
+> @property其实就是实现了getter功能； @xxx.setter实现的是setter功能；还有一个 @xxx.deleter实现删除功能
+定义方法的时候 @property必须在 @xxx.setter之前，且二者修饰的方法名相同（age()）
+如果只实现了 @property（而没有实现@xxx.setter），那么该属性为 只读属性
+
+
 
 
 
