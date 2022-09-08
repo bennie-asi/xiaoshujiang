@@ -584,3 +584,7 @@ def money_to_sound_text(money):
     '''转换为语音友好的文本'''
 ```
 
+``` python
+def imap(func, *iterables):
+```
+
