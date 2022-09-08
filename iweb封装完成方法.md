@@ -284,3 +284,11 @@ def get_obj_cache_key_with_fields(fields):
 def get_cached_obj(model, objid, timeout=60 * 60 * 24):
 ```
 
+``` python
+def get_cached_obj_with_fields(model, fields, timeout=60 * 60 * 24):
+```
+
+``` python
+def del_cached_obj(obj):
+```
+
