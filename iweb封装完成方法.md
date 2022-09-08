@@ -506,5 +506,7 @@ def _wrapArrayDict(d):
     """
 ```
 
-
+``` python
+def parseToMultiDict(d, rd=None):
+```
 
