@@ -261,3 +261,8 @@ def get_or_set_cache(key, newval, timeout=30, autolang=True, lock=False):
     """有就获取键缓存，没有就设置键缓存为newcal"""
 ```
 
+``` python
+def site_get_or_set_cache(key, newval, timeout=30):
+    """设置网站配置某键的缓存"""
+```
+
