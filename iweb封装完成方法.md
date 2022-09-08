@@ -266,3 +266,8 @@ def site_get_or_set_cache(key, newval, timeout=30):
     """设置网站配置某键的缓存"""
 ```
 
+``` python
+def site_del_cache(key):
+    """删除网站配置某键的缓存"""
+```
+
