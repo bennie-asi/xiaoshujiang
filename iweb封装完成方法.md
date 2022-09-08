@@ -628,3 +628,7 @@ def T(text):
     '''自动翻译'''
 ```
 
+``` python
+def create_datetime(date, time):
+```
+
