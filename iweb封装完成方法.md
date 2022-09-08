@@ -449,5 +449,13 @@ def treechildren(tre, d):
     """
 ```
 
-
+``` python
+def treelevel(tree, d, lv=0, od=0):
+    """
+    :param tree: 具有树特征的数据
+    :param d: 一般为空字典
+    :return: 返回树的枝干数。如：dl={};treelevel(treedata, dl);
+            dl则等于：{3: [0, 1], 2: [1, 2], 1: [2, 3], 4: [0, 4], 5: [0, 5]}
+    """
+```
 
