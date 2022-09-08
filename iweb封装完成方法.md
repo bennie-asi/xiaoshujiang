@@ -464,5 +464,8 @@ def base64_decode(encode):
     '''解码base64字符串，自动补全末尾确实等号'''
 ```
 
-
+``` python
+def base64_encode(data):
+    '''对data进行base64编码'''
+```
 
