@@ -427,5 +427,13 @@ def gen_mongo_pager(query, trans=None, size=10, page=1, param=None):
 def gen_mongo_pager_array(query, trans=None, size=10, page=1, param=None, func=None):
 ```
 
+``` python
+def list2trees(lst):
+    """
+    :param lst: 接受具有树结构的数据，限制两个字段数据;
+    :return: 返回具有树特征的数据。例如：如接受：[[1, 2], [2, 3], [3, ''], [4, ''], [5, '']]；
+            返回: [(3, '', [(2, 3, [(1, 2, [], 0)], 0)], 0), (4, '', [], 0), (5, '', [], 0)]
+    """
+```
 
 
