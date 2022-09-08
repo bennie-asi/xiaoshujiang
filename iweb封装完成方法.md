@@ -510,5 +510,11 @@ def _wrapArrayDict(d):
 def parseToMultiDict(d, rd=None):
 ```
 
-
+``` python
+def extend_x_args(*args, unique=None):
+    """
+    :param args: 接受许多未知参数；
+    :return: 返回通过唯一键unique过滤后的列表
+    """
+```
 
