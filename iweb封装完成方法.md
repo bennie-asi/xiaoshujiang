@@ -170,3 +170,17 @@ def dic2objTimes(o, fs, d):
 def dic2dic(dst, ks, src):
 ```
 
+``` python
+def json_filed_default(obj):
+```
+
+``` python
+def get_one_by_sql(sql, params=None, db=None):
+    """
+    :param sql: sql语句，算编程语言  sql="insert into cdinfo values(%s,%s,%s,%s,%s)"
+    :param params: 参数  params=(title,singer,imgurl,url,alpha)
+    :param db: 数据库  db=main
+    :return: 返回数据库查询结果集
+    """
+```
+
