@@ -329,3 +329,7 @@ def parse_time(s):
 def parse_datetime(s):
 ```
 
+``` python
+def get_qrcode_url(text, logourl=None, corner='lt-rb'):
+```
+
