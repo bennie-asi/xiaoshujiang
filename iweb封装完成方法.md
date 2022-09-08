@@ -192,3 +192,13 @@ def objstrip(obj):
     """
 ```
 
+``` python
+def splitstrip(strs, seg=' '):
+    """
+    :param strs: 字符串
+    :param seg: 指定通过什么拆分字符串
+    :return: 作用：将传入的字符串，通过指定字符拆分为列表，多个连续的该字符会被处理为一个，seg可以指定通过什么拆分；
+                默认去除首尾空格；默认通过空格拆分为列表。
+    """
+```
+
