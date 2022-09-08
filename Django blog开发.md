@@ -204,3 +204,7 @@ query_set = CrontabInfo.objects.filter(**conditions)
 如果只实现了 @property（而没有实现@xxx.setter），那么该属性为 只读属性
 
 
+@csrf_exempt类的视图跨域
+方法一：在类的 dispatch 方法上使用 @csrf_exempt
+![enter description here](https://img-blog.csdn.net/20180620162852980?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDc0NDI2NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+方法二：在urls.py中配置
