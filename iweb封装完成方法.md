@@ -389,6 +389,9 @@ def set_global_session(key, data):
     """用缓存设置全局session"""
 ```
 
-
+``` python
+def get_global_session(key):
+    """获取全局session"""
+```
 
 
