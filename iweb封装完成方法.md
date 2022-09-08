@@ -339,4 +339,9 @@ def get_barcode_url(text):
 # 条形码生成
 ```
 
+``` python
+def wrap_url(path):
+```
+
+
 
