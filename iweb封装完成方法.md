@@ -351,5 +351,7 @@ def get_urlqrcode_url(path, logo=None):
 def month_first_day(y, m):
 ```
 
-
+``` python
+def month_last_day(y, m):
+```
 
