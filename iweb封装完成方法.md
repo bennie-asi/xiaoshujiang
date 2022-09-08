@@ -610,3 +610,8 @@ def trans_name(s, lang=None, langsdic=None):
     '''中文/英文/泰文'''
 ```
 
+``` python
+def trans_dict(d, fields, lang=None, trans=None):
+    '''翻译字典(一层)'''
+```
+
