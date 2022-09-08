@@ -615,4 +615,9 @@ def trans_dict(d, fields, lang=None, trans=None):
     '''翻译字典(一层)'''
 ```
 
+``` python
+def trans_dict_list(items, *args):
+```
+
+
 
