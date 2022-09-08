@@ -301,3 +301,7 @@ def del_obj_all_cache(obj):
 def get_table_cache(key, default=None):
 ```
 
+``` python
+def set_table_cache(key, newval, timeout=30):
+```
+
