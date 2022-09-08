@@ -529,5 +529,29 @@ def clear_emoji(s):
 
 ``` python
 def clear_dic_emoji(dic: dict, keys) -> dict:
+    """
+    清除字典中对应键中的表情
+    :param dic: 需要处理的字典
+    :param keys: 需要处理的键
+    :return dict
+    """
 ```
 
+``` python
+def _worker_run():
+    """线程任务"""
+```
+
+``` python
+def add_task_func(target, args=None, kwargs=None, name=None):
+    """添加任务"""
+```
+
+``` python
+def wrap_signature(signature):
+```
+
+``` python
+def get_decimal_with_percent(total, percent):
+    '''根据百分比计算金额'''
+```
