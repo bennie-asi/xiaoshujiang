@@ -479,5 +479,10 @@ def base64_decode_string(s):
 '''解码字符串'''
 ```
 
+``` python
+def get_next_counter(key, count=1):
+    '''获取下一个计数，每调用一次计数自动+1'''
+```
+
 
 
