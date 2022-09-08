@@ -384,6 +384,11 @@ def get_uuid():
     """获取通用唯一识别码"""
 ```
 
+``` python
+def set_global_session(key, data):
+    """用缓存设置全局session"""
+```
+
 
 
 
