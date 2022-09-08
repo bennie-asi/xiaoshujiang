@@ -469,5 +469,9 @@ def base64_encode(data):
     '''对data进行base64编码'''
 ```
 
+``` python
+def base64_encode_string(s):
+```
+
 
 
