@@ -399,6 +399,9 @@ def del_global_session(key):
     """删除全局session"""
 ```
 
-
+``` python
+def get_cached_file(fileurl, force=False, subpath='', partition=False, wrap=None):
+    """获取缓存文件，需至少传入文件路径"""
+```
 
 
