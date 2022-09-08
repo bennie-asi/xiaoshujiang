@@ -569,3 +569,14 @@ def get_money_charges(money, restMoney, percent):
     '''
 ```
 
+``` python
+def get_day_during(dt):
+    '''获取某一天的开始和结束时间'''
+    import datetime
+    start = None
+    end = None
+    if isinstance(dt, datetime.datetime):
+        start = dt.replace(hour=0, minute=0, second=0, microsecond=0)
+        end = dt.replace(hour=23, minute=59, second=59, microsecond=0)
+    return start, end
+```
