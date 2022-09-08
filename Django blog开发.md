@@ -206,5 +206,32 @@ query_set = CrontabInfo.objects.filter(**conditions)
 
 @csrf_exempt类的视图跨域
 方法一：在类的 dispatch 方法上使用 @csrf_exempt
-![enter description here](https://img-blog.csdn.net/20180620162852980?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDc0NDI2NQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+``` python
+from django.views.decorators.csrf import csrf_exempt
+
+class MyView(View):
+
+    def get(self, request):
+        return HttpResponse("hi")
+
+    def post(self, request):
+        return HttpResponse("hi")
+
+    @csrf_exempt
+    def dispatch(self, *args, **kwargs):
+        return super(MyView, self).dispatch(*args, **kwargs)
+```
+
 方法二：在urls.py中配置
+
+``` python
+from django.conf.urls import url
+from django.views.decorators.csrf import csrf_exempt
+import views
+
+urlpatterns = [
+    url(r'^myview/$', csrf_exempt(views.MyView.as_view()), name='myview'),
+]
+
+```
