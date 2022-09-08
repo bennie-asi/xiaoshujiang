@@ -597,3 +597,7 @@ def get_obj_foreignkey_text(obj, field, timeout):
 def get_local_value(name, default=None):
 ```
 
+``` python
+def set_local_value(name, value):
+```
+
