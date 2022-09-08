@@ -271,3 +271,8 @@ def site_del_cache(key):
     """删除网站配置某键的缓存"""
 ```
 
+``` python
+def get_model_obj_cache_key(model, objid):
+    '''获取对象缓存的键名子'''
+```
+
