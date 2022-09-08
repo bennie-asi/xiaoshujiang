@@ -235,3 +235,5 @@ urlpatterns = [
 ]
 
 ```
+
+template_name是类视图中的一个变量，默认值是'registration/login.html'，通过向as_view传入参数template_name='account/login.html'可以修改这个变量值
