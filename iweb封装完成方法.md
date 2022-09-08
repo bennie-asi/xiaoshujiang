@@ -484,5 +484,18 @@ def get_next_counter(key, count=1):
     '''获取下一个计数，每调用一次计数自动+1'''
 ```
 
+``` python
+def _parseToMultiDict(k, v, rd):
+    """
+    :param k: 字符串
+    :param v: 某一值
+    :param rd: 某一字典
+    :return: 更改后的字典。作用：对字符串用点号“.”分割。没有则不分割；直接设置键值对：rd[k] = v。
+                                有则分割；设置rd[k的点号之前字符] = {k点好之后字符：v}，并循环。
+                        如：_parseToMultiDict('sd899.e89r', 'sdsqw', dic)
+                        返回的字典：{'sd899': {'e89r': 'sdsqw'}}
+    """
+```
+
 
 
