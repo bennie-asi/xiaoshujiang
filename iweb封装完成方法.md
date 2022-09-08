@@ -459,5 +459,8 @@ def treelevel(tree, d, lv=0, od=0):
     """
 ```
 
-
+``` python
+def base64_decode(encode):
+    '''解码base64字符串，自动补全末尾确实等号'''
+```
 
