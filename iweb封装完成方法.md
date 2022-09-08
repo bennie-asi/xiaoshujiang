@@ -369,3 +369,8 @@ def get_or_set_file(filekey, content, subpath=None, force=False, partition=False
     '''将文件保存到上传临时目录'''
 ```
 
+``` python
+def register_models(models):
+    """如果模型被设置为abstract，则不注册，反之则注册"""
+```
+
