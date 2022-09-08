@@ -317,3 +317,15 @@ def get_safe_cache(key, default=None):
 def set_safe_cache(key, newval, timeout=30):
 ```
 
+``` python
+def del_safe_cache(key):
+```
+
+``` python
+def parse_time(s):
+```
+
+``` python
+def parse_datetime(s):
+```
+
