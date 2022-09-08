@@ -379,5 +379,9 @@ def mergedic(rawd, *othd):
     """多个字典合并，就地合并，即合并之后的结果放入rawd中"""
 ```
 
+``` python
+def get_uuid():
+    """获取通用唯一识别码"""
+```
 
 
