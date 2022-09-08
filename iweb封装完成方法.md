@@ -246,3 +246,8 @@ def set_cache(key, newval, timeout=30, autolang=True):
     """设置某键缓存为newval"""
 ```
 
+``` python
+def del_cache(key, autolang=True):
+    """删除缓存"""
+```
+
