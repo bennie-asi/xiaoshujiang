@@ -241,3 +241,8 @@ def isidcardno(v):
     """检查18位身份证号"""
 ```
 
+``` python
+def set_cache(key, newval, timeout=30, autolang=True):
+    """设置某键缓存为newval"""
+```
+
