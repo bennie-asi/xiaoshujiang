@@ -236,3 +236,8 @@ def isphone(phone):
     '''是否是手机格式'''
 ```
 
+``` python
+def isidcardno(v):
+    """检查18位身份证号"""
+```
+
