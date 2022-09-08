@@ -471,9 +471,13 @@ def base64_encode(data):
 
 ``` python
 def base64_encode_string(s):
+'''编码字符串'''
 ```
 
 ``` python
 def base64_decode_string(s):
+'''解码字符串'''
 ```
+
+
 
