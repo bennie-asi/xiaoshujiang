@@ -555,3 +555,17 @@ def wrap_signature(signature):
 def get_decimal_with_percent(total, percent):
     '''根据百分比计算金额'''
 ```
+
+``` python
+def get_money_charges(money, restMoney, percent):
+    '''计算手续费
+    money: 用户提现金额
+    restMoney: 用户余额
+    percent: 手续费比例（百分比）
+
+    returns:
+        money: 提现金额
+        charges: 手续费
+    '''
+```
+
