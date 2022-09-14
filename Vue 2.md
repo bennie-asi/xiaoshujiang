@@ -138,6 +138,75 @@ new Vue({
 })
 </script>
 ```
+emit:用于子组件向父组件传递数据的方法。
+
+### 事件修饰符
+**prevent：阻止默认事件（常用）**
+
+``` html
+   <!-- 阻止默认事件（常用） -->
+    <a href="http://www.atguigu.com" @click.prevent="showInfo">点我提示信息</a>
+```
+a标签的默认有跳转到href的行为，我们把默认行为禁用后，就不会跳转页面
+**stop：阻止事件冒泡（常用）**
+
+``` html
+      <!-- 阻止事件冒泡（常用） -->
+        <div class="demo1" @click="showInfo">
+            <button @click.stop="showInfo">点我提示信息</button>
+            <!-- 修饰符可以连续写 -->
+             <a href="http://www.atguigu.com" @click.prevent.stop="showInfo">点我提示信息</a> 
+        </div>
+```
+**once：事件只触发一次（常用）**
+
+``` html
+      <!-- 事件只触发一次（常用） -->
+        <button @click.once="showInfo">点我提示信息</button>
+```
+**capture：使用事件的捕获模式**
+
+``` html
+  <!-- 使用事件的捕获模式 -->
+        <div class="box1" @click.capture="showMsg(1)">
+            div1
+            <div class="box2" @click="showMsg(2)">
+                div2
+            </div>
+        </div>
+```
+**self：只有event.target是当前操作的元素时才触发事件**
+
+``` html
+  <!-- 只有event.target是当前操作的元素时才触发事件； -->
+        <div class="demo1" @click.self="showInfo">
+            <button @click="showInfo">点我提示信息</button>
+        </div>
+```
+
+v-model:一般用在表达输入，很轻松的实现表单控件和数据的双向绑定
+v-html：更新元素的innerHTML
+v-show与v-if：条件渲染，注意二者区别
+v-on:click:可以简写为@click,@绑定一个事件。如果事件触发了，就可以指定事件的处理函数
+v-for：基于源数据多次渲染元素或模板
+v-bind:当表达式的值改变时，将其产生的连带影响，响应式地作用于DOM语法
+v-bind:title=”msg”简写：title="msg"
+
+--------------------------------------------------------
+绑定class的数组用法
+1.对象方法v-bind:class="{'orange':isRipe, 'green':isNotRipe}”
+2.数组方法v-bind:class="【class1,class2】"
+3.行内v-bind:style="{color:color,fontSize:fontSize+'px'}”
+
+--------------------------------------------------------
+路由跳转方式
+1.router-link标签会渲染为标签，咋填template中的跳转都是这种；
+2.另一种是编辑是导航，也就是通过js跳转比如router.push('/home')
+
+**在Vue2中新增属性进行拦截**
+==Vue.set(Object,property,value) #F44336==
+
+
 ## Vue.js Ajax(axios)
 创建请求时可用的配置选项，注意只有 url 是必需的。如果没有指定 method，请求将默认使用 get 方法。
 
@@ -369,4 +438,3 @@ axios.get('/user/12345', {
 
 ## Vue.js Ajax(vue-resource)
 用于异步加载
-
