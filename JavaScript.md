@@ -1,6 +1,6 @@
 ---
-title: JavaScrip
-tags: JavaScript,ES6,日志
+title: JavaScript
+tags: 'JavaScript,ES6,日志'
 category: /小书匠/日记/2022-09
 renderNumberedHeading: true
 grammar_cjkRuby: true
@@ -525,4 +525,24 @@ await：用于等待一个异步方法执行完成
 如果它等到的不是一个 Promise 对象，那 await 表达式的运算结果就是它等到的东西。
 如果它等到的是一个 Promise 对象，await 就忙起来了，它会阻塞后面的代码，等着 Promise 对象 resolve，然后得到 resolve 的值，作为 await 表达式的运算结果。
 其实这就是 await 必须用在 async 函数中的原因。async 函数调用不会造成阻塞，它内部所有的阻塞都被封装在一个 Promise 对象中异步执行。
+
+## DOM操作
+DOM（Document Object Model）文档对象模型
+### DOM对象方法
+一些常用到的DOM对象方法
+
+| 方法                     | 描述                                                            |
+| ------------------------ | --------------------------------------------------------------- |
+| getElementById()         | 返回带有指定 ID 的元素。                                        |
+| getElementsByTagName()   | 返回包含带有指定标签名称的所有元素的节点列表（集合/节点数组）。 |
+| getElementsByClassName() | 返回包含带有指定类名的所有元素的节点列表。                      |
+| appendChild()            | 把新的子节点添加到指定节点。                                    |
+| removeChild()            | 删除子节点。                                                    |
+| replaceChild()           | 替换子节点。                                                    |
+| insertBefore()           | 在指定的子节点前面插入新的子节点。                              |
+| createAttribute()        | 创建属性节点                                                    |
+| createElement()          | 创建元素节点                                                    |
+| createTextNode()         | 创建文本节点                                                    |
+| getAttribute()           | 返回指定的属性值。                                              |
+| setAttribute()           | 把指定属性设置或修改为指定的值。                                |
 
