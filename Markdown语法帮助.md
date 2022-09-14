@@ -142,7 +142,6 @@ Emmet：code后敲Tab，行首生效
 # 其他emmet快捷输入
 day后敲Tab，当前日期。注意day需在行首或前面有空格
 time后敲Tab，当前时间。注意time需在行首或前面有空格
-
 # 文档结构图
 文章很长时，word里有文档结构图，HBuilderX也有。
 菜单视图-文档结构图，快捷键Alt+W(mac是ctrl+W)，轻松管理长文档
