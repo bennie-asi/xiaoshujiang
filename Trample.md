@@ -12,3 +12,16 @@ grammar_cjkRuby: true
 解决办法：windows下没有该模块依赖，从网上寻找对应依赖下载安装[visual studio C++ build tools](https://pan.baidu.com/s/1GrzxqB8zdXbN9OhSTQIqFA?pwd=xwuw)
 
 缺少的其他模块无需安装也能运行，猜测后期用到才需要进行安装
+
+需要安装的模块
+
+``` txt
+Django==2.1.5
+yaml
+uniapi
+six
+lxml
+pymysql
+```
+
+
