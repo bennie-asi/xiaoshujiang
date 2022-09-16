@@ -25,6 +25,8 @@ pymysql
 kombu
 celery
 django-redis
+bson
+
 ```
 
 
