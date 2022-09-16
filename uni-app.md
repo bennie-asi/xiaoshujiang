@@ -14,4 +14,4 @@ JQL，全称 javascript query language，是一种js方式操作数据库的规�
  
  RBAC模型
  
-  
+  Object.assign()拷贝源对象自身的并且可枚举的属性到目标对象
