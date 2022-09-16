@@ -24,7 +24,7 @@ lxml
 pymysql
 kombu
 celery
-
+django-redis
 ```
 
 
