@@ -34,3 +34,36 @@ iter()
 delattr()	getattr()	hasattr()	setattr()
 
 enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标，一般用在 for 循环当中。
+
+with的用法
+有一些任务，可能事先需要设置，事后做清理工作。对于这种场景，Python的with语句提供了一种非常方便的处理方式。
+基本思想是:with所求值的对象必须有一个enter()方法，一个exit()方法。
+
+紧跟with**后面的语句被求值后，返回对象的**__enter__()方法被调用，这个方法的返回值将被赋值给as后面的变量。当with后面的代码块全部被执行完之后，将调用前面返回对象的exit()方法。
+
+``` python
+class Sample:
+    def __enter__(self):
+        print("in __enter__")
+
+        return "Foo"
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+                    #exc_type：　错误的类型 
+                    #exc_val：　错误类型对应的值 
+                    #exc_tb：　代码中错误发生的位置 
+        print("in __exit__")
+
+def get_sample():
+    return Sample()
+with get_sample() as sample:
+    print("Sample: " ,sample)
+```
+![enter description here](./images/1663312795368.png)
+运行过程
+    1. __enter__()方法先被执行
+    2. __enter__()方法返回的值 - 这个例子中是"Foo"，赋值给变量'sample'
+    3. 执行with中的代码块，打印变量"sample",其值当前为 "Foo"
+    4. 最后__exit__()方法被调用
+
+
