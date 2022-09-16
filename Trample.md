@@ -22,6 +22,9 @@ uniapi
 six
 lxml
 pymysql
+kombu
+celery
+
 ```
 
 
