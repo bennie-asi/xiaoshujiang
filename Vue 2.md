@@ -509,3 +509,4 @@ Vue.use(pre)
 
 ```
 
+process.env 是VUE用于配置开发环境变量
