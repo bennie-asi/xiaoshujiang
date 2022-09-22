@@ -510,3 +510,21 @@ Vue.use(pre)
 ```
 
 process.env 是VUE用于配置开发环境变量
+
+## 自定义组件
+
+``` html
+1.第一步：在页面中引入子组件,(假设在components文件下有一个myHeader.vue组件)
+import myHeader from '@/components/myHeader.vue'
+2.第二步：注册子组件
+components:{
+	myHeader
+}
+3.第三步：作为标签使用
+<myHeader />
+或者
+<myHeader></myHeader>
+
+```
+
+对于CSS可以添加scope来避免样式污染全局样式
