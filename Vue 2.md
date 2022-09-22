@@ -528,3 +528,5 @@ components:{
 ```
 
 对于CSS可以添加scope来避免样式污染全局样式
+
+`<view></view>`标签相当于h5中的`<span></span>`标签，无法直接设置宽高，需要设置属性`display=inline-block`后可设置宽高属性
