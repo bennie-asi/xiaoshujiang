@@ -530,3 +530,5 @@ components:{
 对于CSS可以添加scope来避免样式污染全局样式
 
 `<view></view>`标签相当于h5中的`<span></span>`标签，无法直接设置宽高，需要设置属性`display=inline-block`后可设置宽高属性
+
+v-show 在使用自定义组件时可能存在不生效问题，初判是由于组件内部已经使用了display属性，优先级比v-show更高，导致的不生效
