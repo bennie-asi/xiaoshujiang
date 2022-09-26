@@ -30,3 +30,11 @@ bson
 ```
 
 
+css flex布局
+常用属性
+flex-direction
+flex-wrap
+flew-flow
+justify-content
+align-items
+align-content
