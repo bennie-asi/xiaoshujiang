@@ -34,7 +34,7 @@ class命名：
 > ![enter description here](./images/1667960743553.png)
 
 ## 项目结构
-![enter description here](./images/1667961230849.png)
+![项目结构](./images/1667961230849.png)
 #### **colorui**
 引入的一个外部CSS库，目前官网`https://www.color-ui.com/` 已经打不开了，其中的main.css可以根据项目需要来对标签进行一些全局修改，如去掉一些默认样式。
 #### **common**
