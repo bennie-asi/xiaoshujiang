@@ -54,4 +54,7 @@ class命名：
 **utils.js**一些常用工具方法的封装，如格式化浮点数、格式化时间、检查银行卡号、检查手机号、检查身份证号、深拷贝等方法
 **websocket.js**主要是建立websocket连接所需方法
 **wxh5.js**与微信H5功能相关的方法
-
+#### components
+存放着封装好的项目组件与通用组件，一般小组件以单个文件组成，大组件才需用文件夹将组件包裹，项目组件一般以项目名与组件名通过短横线连接方式命名，通用组件则以ir与组件名通过短横线连接方式命名,如下图所示![enter description here](./images/1667964597874.png)
+#### pages
+uni-app固定pages中存放页面文件，需要注意的是分包问题，不同的小程序平台对分包的要求不一样，如需分包，一般在home\index文件夹存放tabbar的页面，然后每个tabbar作为一个文件夹，分包相关查看[uniapp分包详尽版](https://zhuanlan.zhihu.com/p/426186756)，组织结构如下所示![enter description here](./images/1667964953766.png)
