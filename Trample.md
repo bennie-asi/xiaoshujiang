@@ -40,3 +40,5 @@ align-items
 align-content
 
 使用fixed定位后，标签在循环中会只能获取到最后一个元素，原因是fixed定位脱离文档流
+
+js中for in语法只能作用于 对象用于遍历对象属性，而不能作用于数组
