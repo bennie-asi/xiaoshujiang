@@ -190,4 +190,47 @@ products: new this.$Pager({  //实例化类
 					size: 20
 				}),
 ```
+Pages类的常用方法
+
+``` js
+async onLoad() {
+	//获取第一页数据
+	await this.pager.first()
+},
+async onReachBottom() {
+//获取下一页数据,如果有
+	await this.pager.more()
+},
+//上一页
+await this.pager.prev()
+//下一页
+await this.pager.next()
+//重新加载本页数据
+await this.pager.reload()
+```
+
+### Loader
+用于数据需要等待一段时间才能请求的方法（这里是前端做了限制，后端也会限制频繁访问），如展示广告的数据。示例：
+
+``` js
+loader: new this.$Loader({
+	apiname: 'pre/getADLayout',
+	fastCache: true,
+	cacheTimeout: 60 * 1,
+	showLoadding:false,
+	param: ()=>{
+		return {
+			key: this.adkey
+			}
+		}
+})
+```
+Loader类的常用方法
+
+``` js
+//加载数据
+this.loader.load()
+//获取加载好的数据
+let data=this.loader.data
+```
 
