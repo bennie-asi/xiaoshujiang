@@ -147,3 +147,16 @@ async goPage(path) {
 	}
 },
 ```
+#### $back
+
+``` js
+$back(success = null)
+```
+
+用于关闭当前页并返回上一页，接收一个可选参数success，success是函数执行成功后的回调。示例：
+
+``` js
+onCancel() {
+	this.$back()
+},
+```
