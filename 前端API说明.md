@@ -45,7 +45,7 @@ class命名：
 **geo.js**提供了百度坐标（BD09）、国测局坐标（火星坐标，GCJ02）、和WGS84坐标系之间的转换。后端保存的经纬度可能需要经过转换才能在地图组件中使用。
 **hardware.js**中封装了一些跟硬件操作相关的方法。
 **index.js**是所有common文件夹中js的入口文件，通过index.js挂载到vue实例中。
-**irIcon.css**用来放置项目中使用到的ICON图标的class，需与[阿里巴巴矢量图标库](https://www.iconfont.cn/)配合使用，具体使用参照`前端封装方法使用`章节
+**irIcon.css**用来放置项目中使用到的ICON图标的class，需与[阿里巴巴矢量图标库](https://www.iconfont.cn/)配合使用，具体使用参照`引入阿里巴巴矢量图标库`章节
 **lazy.js**封装了一些懒加载相关方法
 **main.scss**存放着一些项目的可复用的样式，项目中重复使用的样式可抽取到该文件中。
 **request.js**封装着一些向后端发起网络请求的方法，主要是$callapi、$Pager，具体使用参照`前端封装方法使用`章节
@@ -234,4 +234,33 @@ this.loader.load()
 let data=this.loader.data
 ```
 
-### 引入阿里巴巴矢量图标库
+## 引入阿里巴巴矢量图标库
+ 1. 首先需要注册并登录[阿里巴巴矢量图标](https://www.iconfont.cn/home/index)，接着加入或者创建项目，![enter description here](./images/1668502214667.png)进入如图界面。
+ 2. 使用Hbuilder X打开前端项目，打开App.vue文件，根据项目文件路径在style中添加如下语句。![enter description here](./images/1668502402137.png)
+ 3. 在`common/irIcon.css`文件中添加如下代码：
+``` css
+[class*="irIcon-"] {
+	font-family: "irIcon" !important;
+	font-size: inherit;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.irIcon {
+	font-family: "irIcon" !important;
+	font-size: 16px; /*可根据项目需求更改*/
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+```
+ 4.  打开阿里巴巴矢量图标库，点击项目设置，并更改设置为下图所示（记得保存），![enter description here](./images/1668503034681.png)![enter description here](./images/1668503119542.png)
+   
+
+ 
+  5. 点击生成在线链接，并复制生成的链接代码。如下图所示![enter description here](./images/1668502696973.png)
+ 6. 将复制的代码粘贴至i`rIcon.css`文件中![enter description here](./images/1668502826256.png)
+ 7. 在阿里巴巴矢量图标库中找到所需图标，记住图标的unicode码与Font class名称![enter description here](./images/1668503401484.png)
+ 8. 将unicode与font class 粘贴至irIcon.css文件中，具体操作如下![enter description here](./images/1668503707098.png)
+ 9. 在项目中使用图标，直接使用Font class即可![enter description here](./images/1668503798098.png)
+
