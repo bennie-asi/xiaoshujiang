@@ -160,3 +160,34 @@ onCancel() {
 	this.$back()
 },
 ```
+### 请求类方法
+请求类方法位于`/pages/common/request.js`文件中，主要是用来向后端发起网络的方法，有以下三个，$callapi、$Loader、$Pager，其中callapi使用方法实现，其余两个使用类实现。
+#### $callapi
+
+``` js
+$callapi(api, data = null)
+```
+普通的请求方法。接收两个参数，api为后端接口的路径名称，data(可选参数)类型为对象，接收url携带的查询参数；示例：
+
+``` js
+this.$doing()
+let res = await this.$callapi('user/doProductCollect', { //前缀Host已在config.js文件中全局定义了。
+		model: 'store',
+		objid: this.user.applets_store_id
+})
+this.$done()
+```
+
+### $Pager
+用于数据需要分页展示的请求方法。常用的接收的参数有三个：apiname接收后端接口的路径名称，param（可选参数）类型为对象，接收url携带的查询参数，size（可选参数）类型为正整形，表示一页数据的条数，默认值为10。值得注意的是Pager的类型是一个类，在使用时要按照使用类的方式来使用。示例：
+
+``` js
+products: new this.$Pager({  //实例化类
+					apiname: 'user/getCollectedList',
+					param: () => ({
+						tag: "storeproduct"
+					}),
+					size: 20
+				}),
+```
+
