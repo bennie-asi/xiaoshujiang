@@ -123,8 +123,8 @@ async removeImage(index) {
 doing用来展示加载中的样式，done用于隐藏加载中样式；注意：doing和done必须配套使用，否则会出现一直在加载的情况，导致页面卡住的假象；一般用于需要提示用户正在加载数据方法的前后。示例：
 
 ``` js
-this.$doing()
+this.$doing() //执行加载数据的方法前，展示加载样式
 let res = await this.$callapi('finishSelfPick',{oid:item.oid})
-this.$done()
+this.$done() //加载数据方法结束，隐藏加载样式
 ```
 
