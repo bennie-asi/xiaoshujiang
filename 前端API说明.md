@@ -128,3 +128,22 @@ let res = await this.$callapi('finishSelfPick',{oid:item.oid})
 this.$done() //加载数据方法结束，隐藏加载样式
 ```
 
+#### $goto
+
+``` javascript
+$goto(url, redirect)
+```
+用于向url进行跳转；接收两个参数，url表示跳转的地址，redirect(可选参数)布尔值表示是否以重定向的方式进行跳转。此函数会根据所传url前缀的不同进行不同的操作，具体的封装请自行查阅。示例：
+
+``` js
+async goPage(path) {
+	if (this.logged) {
+	this.$goto(path)
+} else {
+	let query = await this.$query('登录后查看详情')
+	if (query) {
+	this.$goto('/pages/other/login')
+		}
+	}
+},
+```
